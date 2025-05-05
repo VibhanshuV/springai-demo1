@@ -6,7 +6,7 @@ import ChatComponent from './components/ChatComponent.jsx';
 
 function App() {
   const [activeTab, setActiveTab] = useState('image-generator');
-  const [apiUrl, setApiUrl] = useState('');
+  const apiUrl = "https://springai-demo1-backend.onrender.com";
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
@@ -24,10 +24,6 @@ function App() {
       {activeTab === 'image-generator' && <ImageGenerator url={apiUrl}/>}
       {activeTab === 'chat' && <ChatComponent url={apiUrl}/>}
       {activeTab === 'recipe-generator' && <RecipeGenerator url={apiUrl}/>}
-
-      <div className='api-url'> 
-        <input type='text' value={apiUrl} onChange={(e) => setApiUrl(e.target.value)} placeholder='Enter API URL'></input>
-      </div>
    
     </>
   )
